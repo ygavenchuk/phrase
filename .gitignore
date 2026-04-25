@@ -1,0 +1,6 @@
+.idea/
+.venv/
+.reports/
+dist/
+*.pyc
+*.pyo
