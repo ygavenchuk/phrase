@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "phrase"
-version = "0.1.0"
+version = "0.1.0a1"
 description = "A lightweight, zero-dependency syntax builder for multiple dialects."
 readme = "README.md"
 requires-python = ">=3.14"
