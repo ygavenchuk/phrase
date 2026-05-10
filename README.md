@@ -84,7 +84,7 @@ Python
 
 #### 🧪 Installation
 ```bash
-pip install phrase
+pip install pyphrase
 ```
 
 #### Note: Requires Python 3.14+
