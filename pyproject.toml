@@ -23,6 +23,12 @@ classifiers = [
 ]
 dependencies = []
 
+[project.urls]
+Homepage = "https://github.com/ygavenchuk/phrase"
+Documentation = "https://github.com/ygavenchuk/phrase"
+Repository = "https://github.com/ygavenchuk/phrase.git"
+Issues = "https://github.com/ygavenchuk/phrase/issues"
+
 [dependency-groups]
 dev = [
     "ruff>=0.8.4",
