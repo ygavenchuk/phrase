@@ -21,7 +21,7 @@ Classes:
 from types import MappingProxyType
 from typing import TYPE_CHECKING, ClassVar, Protocol, cast
 
-from phrase.base.ast.node import (
+from pyphrase.base.ast.node import (
     BinaryConstraint,
     BinaryNode,
     ConstantNode,
@@ -29,7 +29,12 @@ from phrase.base.ast.node import (
     UnaryConstraint,
     UnaryNode,
 )
-from phrase.base.operator import BinaryOperator, LogicalOperator, Operator, UnaryOperator
+from pyphrase.base.operator import (
+    BinaryOperator,
+    LogicalOperator,
+    Operator,
+    UnaryOperator,
+)
 
 if TYPE_CHECKING:
     from collections.abc import Mapping

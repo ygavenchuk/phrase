@@ -1,12 +1,12 @@
 from typing import TYPE_CHECKING, TypeVar
 
-from phrase.base.ast.node import BinaryConstraint, ConstantNode, UnaryConstraint
-from phrase.base.expression import Expression
-from phrase.base.operator import BinaryOperator, Operator, UnaryOperator
+from pyphrase.base.ast.node import BinaryConstraint, ConstantNode, UnaryConstraint
+from pyphrase.base.expression import Expression
+from pyphrase.base.operator import BinaryOperator, Operator, UnaryOperator
 
 if TYPE_CHECKING:
-    from phrase.base.compiler import BaseCompiler
-    from phrase.base.types import CollectionValue, LiteralValue, Scalar
+    from pyphrase.base.compiler import BaseCompiler
+    from pyphrase.base.types import CollectionValue, LiteralValue, Scalar
 
 __all__ = ("BaseField", "ConstantFactory")
 

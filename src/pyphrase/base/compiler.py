@@ -5,8 +5,8 @@ Basic compiler
 from abc import ABC, abstractmethod
 from typing import TYPE_CHECKING, TypeVar
 
-from phrase.base.ast.optimizer import ASTOptimizer
-from phrase.base.ast.rules import (
+from pyphrase.base.ast.optimizer import ASTOptimizer
+from pyphrase.base.ast.rules import (
     ConstantFoldingRule,
     DeMorganRule,
     DoubleNegationRule,
@@ -19,8 +19,8 @@ from phrase.base.ast.rules import (
 if TYPE_CHECKING:
     from collections.abc import Iterable
 
-    from phrase.base.ast.node import Node
-    from phrase.base.renderer import Renderer
+    from pyphrase.base.ast.node import Node
+    from pyphrase.base.renderer import Renderer
 
 
 T = TypeVar("T")

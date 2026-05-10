@@ -12,9 +12,9 @@ While the syntax closely resembles standard SQL, it has several key differences:
 
 """
 
-from phrase.base.factory import ConstantFactory
-from phrase.dialect.sql.common import F as SqlF
-from phrase.dialect.sql.common import (
+from pyphrase.base.factory import ConstantFactory
+from pyphrase.dialect.sql.common import F as SqlF
+from pyphrase.dialect.sql.common import (
     ILikeableMixin,
     ILikeInversionRule,
     SQLCompiler,

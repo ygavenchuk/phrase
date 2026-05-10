@@ -11,12 +11,12 @@ recursion limitations.
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
-from phrase.base.ast.node import BinaryNode, Node, UnaryNode
+from pyphrase.base.ast.node import BinaryNode, Node, UnaryNode
 
 if TYPE_CHECKING:
     from collections.abc import Iterable
 
-    from phrase.base.ast.rules import TransformationRule
+    from pyphrase.base.ast.rules import TransformationRule
 
 
 @dataclass(slots=True)

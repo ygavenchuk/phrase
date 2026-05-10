@@ -35,7 +35,7 @@ from datetime import datetime
 from types import MappingProxyType
 from typing import TYPE_CHECKING, ClassVar
 
-from phrase.base.ast.node import (
+from pyphrase.base.ast.node import (
     BinaryConstraint,
     BinaryNode,
     ConstantNode,
@@ -43,22 +43,22 @@ from phrase.base.ast.node import (
     UnaryConstraint,
     UnaryNode,
 )
-from phrase.base.ast.rules import TransformationRule
-from phrase.base.compiler import BaseCompiler
-from phrase.base.factory import BaseField, ConstantFactory
-from phrase.base.operator import (
+from pyphrase.base.ast.rules import TransformationRule
+from pyphrase.base.compiler import BaseCompiler
+from pyphrase.base.factory import BaseField, ConstantFactory
+from pyphrase.base.operator import (
     BinaryOperator,
     LikeOperator,
     Operator,
     UnaryOperator,
 )
-from phrase.base.renderer import Renderer
+from pyphrase.base.renderer import Renderer
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
 
-    from phrase.base.expression import Expression
-    from phrase.base.types import LiteralValue, Scalar
+    from pyphrase.base.expression import Expression
+    from pyphrase.base.types import LiteralValue, Scalar
 
 
 class LikeInversionRule(TransformationRule):

@@ -3,8 +3,8 @@ from decimal import Decimal
 
 import pytest
 
-from phrase.base.ast.node import ConstantNode
-from phrase.dialect.sql.postgres import C, F
+from pyphrase.base.ast.node import ConstantNode
+from pyphrase.dialect.sql.postgres import C, F
 
 
 def test_pg_ilike_operator_rendering() -> None:

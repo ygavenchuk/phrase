@@ -11,6 +11,6 @@ Specifics:
     * Booleans: Supports standard `TRUE`/`FALSE` (SQLite 3.23.0+)
 """
 
-from phrase.dialect.sql.common import C, F
+from pyphrase.dialect.sql.common import C, F
 
 __all__ = ("C", "F")

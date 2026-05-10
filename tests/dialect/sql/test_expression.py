@@ -1,6 +1,6 @@
 import pytest
 
-from phrase.dialect.sql.common import C, F
+from pyphrase.dialect.sql.common import C, F
 
 
 # basic comparisons (Atomic Predicates)

@@ -35,7 +35,7 @@ The core of the library is the `F` (Field) expression.
 
 ### Basic Comparison
 ```python
-from phrase.dialect.<your-dialect-here> import F
+from pyphrase.dialect.<your-dialect-here> import F
 
 # Simple equality
 expr = F("age") >= 18
@@ -63,10 +63,10 @@ For SQL-based engines, simply casting the compiled expression to a string gives 
 Python
 
 ```python
->>> from phrase.dialect.sql import F
->>> # expr ... see above
->>> str(expr)
->>> '(("status" = \'active\') AND ("price" < 1000)) OR ("category" IS NULL)'
+>> > from pyphrase.dialect.sql import F
+>> >  # expr ... see above
+>> > str(expr)
+>> > '(("status" = \'active\') AND ("price" < 1000)) OR ("category" IS NULL)'
 ```
 
 ##### 2. MongoDB
@@ -75,7 +75,7 @@ Since MongoDB filters are represented as BSON (Python dictionaries), use the .co
 Python
 
 ```python
->>> from phrase.dialect.mongodb import F
+>> > from pyphrase.dialect.mongodb import F
 >>> # expr ... see above
 >>> expr.compile()
 >>> {'$or': [{'$and': [{'status': 'active'}, {'price': {'$lt': 1000}}]}, {'category': None}]}

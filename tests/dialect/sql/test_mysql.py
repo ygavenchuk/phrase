@@ -3,8 +3,8 @@ from decimal import Decimal
 
 import pytest
 
-from phrase.base.ast.node import ConstantNode
-from phrase.dialect.sql.mysql import C, F
+from pyphrase.base.ast.node import ConstantNode
+from pyphrase.dialect.sql.mysql import C, F
 
 
 def test_mysql_field_quoting() -> None:

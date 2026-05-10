@@ -6,8 +6,8 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 
 if TYPE_CHECKING:
-    from phrase.base.operator import Operator
-    from phrase.base.types import Scalar
+    from pyphrase.base.operator import Operator
+    from pyphrase.base.types import Scalar
 
 
 @dataclass(frozen=True, slots=True)

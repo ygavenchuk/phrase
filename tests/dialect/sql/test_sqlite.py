@@ -3,8 +3,8 @@ from decimal import Decimal
 
 import pytest
 
-from phrase.base.ast.node import ConstantNode
-from phrase.dialect.sql.sqlite import C, F
+from pyphrase.base.ast.node import ConstantNode
+from pyphrase.dialect.sql.sqlite import C, F
 
 
 def test_sqlite_field_rendering() -> None:

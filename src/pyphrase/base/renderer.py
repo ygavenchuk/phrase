@@ -1,8 +1,8 @@
 from typing import TYPE_CHECKING, Protocol, TypeVar
 
 if TYPE_CHECKING:
-    from phrase.base.operator import Operator
-    from phrase.base.types import LiteralValue
+    from pyphrase.base.operator import Operator
+    from pyphrase.base.types import LiteralValue
 
 TLiteral = TypeVar("TLiteral")
 

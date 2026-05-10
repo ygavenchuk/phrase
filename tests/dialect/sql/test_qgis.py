@@ -3,7 +3,7 @@ from decimal import Decimal
 
 import pytest
 
-from phrase.dialect.sql.qgis import C, F
+from pyphrase.dialect.sql.qgis import C, F
 
 
 def test_qgis_basic_comparison() -> None:

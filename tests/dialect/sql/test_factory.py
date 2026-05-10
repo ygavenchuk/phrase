@@ -1,5 +1,5 @@
-from phrase.base.ast.node import ConstantNode
-from phrase.dialect.sql import C, F
+from pyphrase.base.ast.node import ConstantNode
+from pyphrase.dialect.sql import C, F
 
 
 def test_constant_true_factory() -> None:

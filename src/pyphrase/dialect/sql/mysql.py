@@ -11,9 +11,9 @@ Specifics:
     * Operators: Uses `!=` as the default inequality operator.
 """
 
-from phrase.base.factory import ConstantFactory
-from phrase.dialect.sql.common import F as SqlF
-from phrase.dialect.sql.common import SQLCompiler, SQLRenderer
+from pyphrase.base.factory import ConstantFactory
+from pyphrase.dialect.sql.common import F as SqlF
+from pyphrase.dialect.sql.common import SQLCompiler, SQLRenderer
 
 
 class MySQLRenderer(SQLRenderer):

@@ -14,10 +14,10 @@ Specifics:
 from types import MappingProxyType
 from typing import TYPE_CHECKING, ClassVar
 
-from phrase.base.factory import ConstantFactory
-from phrase.base.operator import BinaryOperator, Operator
-from phrase.dialect.sql.common import F as SqlF
-from phrase.dialect.sql.common import SQLCompiler, SQLRenderer
+from pyphrase.base.factory import ConstantFactory
+from pyphrase.base.operator import BinaryOperator, Operator
+from pyphrase.dialect.sql.common import F as SqlF
+from pyphrase.dialect.sql.common import SQLCompiler, SQLRenderer
 
 if TYPE_CHECKING:
     from collections.abc import Mapping

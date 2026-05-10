@@ -3,7 +3,7 @@ from decimal import Decimal
 
 import pytest
 
-from phrase.dialect.sql.mssql import C, F
+from pyphrase.dialect.sql.mssql import C, F
 
 
 def test_mssql_brackets_and_bit() -> None:

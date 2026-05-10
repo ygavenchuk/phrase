@@ -15,29 +15,29 @@ Specifics:
 from types import MappingProxyType
 from typing import TYPE_CHECKING, Any, ClassVar
 
-from phrase.base.ast.node import (
+from pyphrase.base.ast.node import (
     BinaryConstraint,
     BinaryNode,
     ConstantNode,
     UnaryConstraint,
     UnaryNode,
 )
-from phrase.base.compiler import BaseCompiler
-from phrase.base.factory import BaseField, ConstantFactory
-from phrase.base.operator import (
+from pyphrase.base.compiler import BaseCompiler
+from pyphrase.base.factory import BaseField, ConstantFactory
+from pyphrase.base.operator import (
     BinaryOperator,
     LikeOperator,
     Operator,
     UnaryOperator,
 )
-from phrase.base.renderer import Renderer
-from phrase.base.types import LiteralValue
+from pyphrase.base.renderer import Renderer
+from pyphrase.base.types import LiteralValue
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
 
-    from phrase.base.ast.node import Node
-    from phrase.base.expression import Expression
+    from pyphrase.base.ast.node import Node
+    from pyphrase.base.expression import Expression
 
 
 type TMongoRendered = dict[str, Any] | LiteralValue

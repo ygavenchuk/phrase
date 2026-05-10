@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "phrase"
-version = "0.1.0a1"
+name = "pyphrase"
+version = "0.1.0a2"
 description = "A lightweight, zero-dependency syntax builder for multiple dialects."
 readme = "README.md"
 requires-python = ">=3.14"

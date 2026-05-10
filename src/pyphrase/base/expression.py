@@ -1,11 +1,11 @@
 from typing import TYPE_CHECKING, TypeVar
 
-from phrase.base.ast.node import BinaryNode, ConstantNode, Node, UnaryNode
-from phrase.base.operator import LogicalOperator, UnaryOperator
+from pyphrase.base.ast.node import BinaryNode, ConstantNode, Node, UnaryNode
+from pyphrase.base.operator import LogicalOperator, UnaryOperator
 
 if TYPE_CHECKING:
-    from phrase.base.compiler import BaseCompiler
-    from phrase.base.types import LiteralValue
+    from pyphrase.base.compiler import BaseCompiler
+    from pyphrase.base.types import LiteralValue
 
 
 T = TypeVar("T")

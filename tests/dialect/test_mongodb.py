@@ -3,9 +3,9 @@ from decimal import Decimal
 
 import pytest
 
-from phrase.base.ast.node import ConstantNode, Node, UnaryNode
-from phrase.base.operator import UnaryOperator
-from phrase.dialect.mongodb import C, F, MongoCompiler
+from pyphrase.base.ast.node import ConstantNode, Node, UnaryNode
+from pyphrase.base.operator import UnaryOperator
+from pyphrase.dialect.mongodb import C, F, MongoCompiler
 
 
 def test_mongo_basic_operators() -> None:

@@ -1,8 +1,8 @@
 import pytest
 
-from phrase.base.ast.node import ConstantNode, Node, UnaryNode
-from phrase.base.operator import UnaryOperator
-from phrase.dialect.sql.common import SQLCompiler
+from pyphrase.base.ast.node import ConstantNode, Node, UnaryNode
+from pyphrase.base.operator import UnaryOperator
+from pyphrase.dialect.sql.common import SQLCompiler
 
 
 def test_render_generic_unary_node_fallback() -> None:
