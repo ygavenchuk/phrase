@@ -8,6 +8,9 @@ on:
     branches:
       - '**'
 
+permissions:
+  contents: read
+
 jobs:
   lock-check:
     name: "📦 Check: uv.lock synchronization"
