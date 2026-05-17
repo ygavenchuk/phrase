@@ -43,7 +43,7 @@ dev = [
 exclude = ["/.github", "/tests", ".gitignore"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/phrase"]
+packages = ["src/pyphrase"]
 
 
 [tool.ruff]

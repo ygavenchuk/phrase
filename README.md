@@ -1,31 +1,31 @@
-# Phrase 🗣️
+# PyPhrase 🗣️
 
-**Phrase** is an ultra-lightweight, zero-dependency Python library designed to build query expressions across multiple dialects with ease. It provides a fluent, Pythonic interface for generating `WHERE` clauses and filter objects without the overhead of a full ORM.
+**PyPhrase** is an ultra-lightweight, zero-dependency Python library designed to build query expressions across multiple dialects with ease. It provides a fluent, Pythonic interface for generating `WHERE` clauses and filter objects without the overhead of a full ORM.
 
-## 🚀 Why Phrase?
+## 🚀 Why PyPhrase?
 
-Most query builders are either tied to a specific database or come with heavy dependencies. **Phrase** was created for cases where you need:
+Most query builders are either tied to a specific database or come with heavy dependencies. **PyPhrase** was created for cases where you need:
 
 *   **Minimalism:** Zero external dependencies. Small footprint.
 *   **Multi-dialect support:** One syntax to rule them all (SQL & NoSQL).
 *   **Simplicity:** Focused specifically on building filter expressions (the `WHERE` clause logic), not managing connections or migrations.
 
 > [!WARNING]
-> **Security Notice:** Phrase is designed for internal logic and programmatic query generation. It **does not** perform extensive escaping or sanitization. It is **not intended** to process raw, untrusted user input from public-facing forms without additional security layers.
+> **Security Notice:** PyPhrase is designed for internal logic and programmatic query generation. It **does not** perform extensive escaping or sanitization. It is **not intended** to process raw, untrusted user input from public-facing forms without additional security layers.
 
 ---
 
 ## 🛠 Supported Dialects
 
-Phrase currently compiles expressions for:
+PyPhrase currently compiles expressions for:
 *   **SQL**
-*   * Generic (`from phrase.dialects.sql import F`);
-*   * SQLite (`from phrase.dialect.sql.sqlite import F`)
-*   * PostgreSQL (`from phrase.dialect.sql.postgres import F`)
-*   * MySQL / MariaDB (`from phrase.dialect.sql.mysql import F`)
-*   * Microsoft SQL Server (MSSQL) (`from phrase.dialect.sql.mssql import F`)
-*   * QGIS (Expression strings) (`from phrase.dialect.sql.qgis import F`)
-*   **MongoDB** (`from phrase.dialect.mongodb import F`)
+*   * Generic (`from pyphrase.dialects.sql import F`);
+*   * SQLite (`from pyphrase.dialect.sql.sqlite import F`)
+*   * PostgreSQL (`from pyphrase.dialect.sql.postgres import F`)
+*   * MySQL / MariaDB (`from pyphrase.dialect.sql.mysql import F`)
+*   * Microsoft SQL Server (MSSQL) (`from pyphrase.dialect.sql.mssql import F`)
+*   * QGIS (Expression strings) (`from pyphrase.dialect.sql.qgis import F`)
+*   **MongoDB** (`from pyphrase.dialect.mongodb import F`)
 
 ---
 
