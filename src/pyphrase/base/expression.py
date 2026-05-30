@@ -1,4 +1,6 @@
-from typing import TYPE_CHECKING, TypeVar
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, Generic, TypeVar
 
 from pyphrase.base.ast.node import BinaryNode, ConstantNode, Node, UnaryNode
 from pyphrase.base.operator import LogicalOperator, UnaryOperator
@@ -7,11 +9,13 @@ if TYPE_CHECKING:
     from pyphrase.base.compiler import BaseCompiler
     from pyphrase.base.types import LiteralValue
 
+__all__ = ("Expression",)
+
 
 T = TypeVar("T")
 
 
-class Expression[T]:
+class Expression(Generic[T]):
     __slots__ = ("_compiler_class", "_node", "_optimizer_class")
 
     def __init__(

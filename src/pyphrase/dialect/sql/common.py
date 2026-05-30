@@ -30,10 +30,12 @@ Architecture:
     special operators (e.g., ILIKE in Postgres).
 """
 
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
 from datetime import datetime
 from types import MappingProxyType
-from typing import TYPE_CHECKING, ClassVar
+from typing import TYPE_CHECKING, ClassVar, Generic, TypeVar
 
 from pyphrase.base.ast.node import (
     BinaryConstraint,
@@ -119,7 +121,8 @@ class SQLRenderer(Renderer[str]):
 
     @staticmethod
     def _escape_string(literal: str) -> str:
-        return f"'{literal.replace("'", "''")}'"
+        escaped_literal = literal.replace("'", "''")
+        return f"'{escaped_literal}'"
 
     @staticmethod
     def _render_boolean(value: bool) -> str:
@@ -211,7 +214,10 @@ class SQLCompiler(BaseCompiler[str]):
                 )
 
 
-class ILikeableMixin[T](ABC):
+T = TypeVar("T")
+
+
+class ILikeableMixin(ABC, Generic[T]):
     __slots__ = ()
 
     @abstractmethod

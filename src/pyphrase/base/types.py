@@ -1,7 +1,9 @@
 from collections.abc import Sequence
 from datetime import datetime
 from decimal import Decimal
-from typing import Protocol, runtime_checkable
+from typing import Protocol, TypeAlias, runtime_checkable
+
+__all__ = ("CollectionValue", "LiteralValue", "Scalar", "TextualType")
 
 
 @runtime_checkable
@@ -23,6 +25,6 @@ class TextualType(Protocol):
         raise NotImplementedError
 
 
-type Scalar = str | int | float | TextualType | datetime | Decimal | None
-type CollectionValue = Sequence[Scalar]
-type LiteralValue = Scalar | CollectionValue
+Scalar: TypeAlias = str | int | float | TextualType | datetime | Decimal | None
+CollectionValue: TypeAlias = Sequence[Scalar]
+LiteralValue: TypeAlias = Scalar | CollectionValue

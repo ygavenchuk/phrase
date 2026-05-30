@@ -15,6 +15,8 @@ from pyphrase.base.factory import ConstantFactory
 from pyphrase.dialect.sql.common import F as SqlF
 from pyphrase.dialect.sql.common import SQLCompiler, SQLRenderer
 
+__all__ = ("C", "F")
+
 
 class MySQLRenderer(SQLRenderer):
     __slots__ = ()

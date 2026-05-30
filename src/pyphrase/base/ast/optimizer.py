@@ -8,6 +8,8 @@ It is designed to handle complex and deeply nested trees without running into
 recursion limitations.
 """
 
+from __future__ import annotations
+
 from dataclasses import dataclass
 from typing import TYPE_CHECKING
 

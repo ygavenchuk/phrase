@@ -87,7 +87,7 @@ Python
 pip install pyphrase
 ```
 
-#### Note: Requires Python 3.14+
+#### Note: Requires Python 3.10+
 ## ⚖️ License
 
 MIT License. See [LICENSE](./LICENSE) for details.
