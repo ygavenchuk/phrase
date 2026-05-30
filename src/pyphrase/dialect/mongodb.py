@@ -97,7 +97,7 @@ class MongoCompiler(BaseCompiler[TMongoRendered]):
             case BinaryNode(left, operator, right):
                 # (AND -> $and, OR -> $or)
                 mongo_operator = self.renderer.render_operator(operator)
-                return {mongo_operator: [self._render(left), self._render(right)]}
+                return {mongo_operator: [self.compile(left), self.compile(right)]}
 
             case UnaryNode(
                 BinaryConstraint(field, LikeOperator.LIKE, value), UnaryOperator.NOT

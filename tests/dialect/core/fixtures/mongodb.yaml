@@ -1,0 +1,295 @@
+import_path: "pyphrase.dialect.mongodb"
+cases:
+  complex_expression:
+    1:
+      $or:
+        - $and:
+            - foo: {$gt: 123}
+            - bar: {$in: [1, 2]}
+        - baz: {$ne: null}
+    2:
+      $or:
+        - $and:
+            - foo: {$gt: 123}
+            - bar: {$in: [1, 2]}
+        - $and:
+            - baz: {$ne: null}
+            - blah: {$ne: "lorem ipsum"}
+  constant:
+    methods:
+      "true": true
+      "false": false
+      "null": null
+    values:
+      integer: 25
+      float: 25.5678
+      string: lorem ipsum
+      datetime: !!timestamp 2000-01-02 03:04:05
+      datetime_with_timezone: !!timestamp 2000-01-02 13:04:05.678901+00:00
+      decimal: !decimal 25.25
+      none_value: null
+    expression:
+      and_true:
+        status: active
+      is_null:
+        deleted_at: null
+      is_not_null:
+        deleted_at:
+          $ne: null
+  equality:
+    equal:
+      boolean:
+        status: true
+      integer:
+        age: 25
+      float:
+        length: 25.5678
+      string:
+        name: John
+      string_with_escaping:
+        name: "O'Reilly"
+      datetime:
+        created_at: !!timestamp 2000-01-02 03:04:05
+      datetime_with_timezone:
+        created_at: !!timestamp 2000-01-02 13:04:05.678901+00:00
+      decimal:
+        price: !decimal 25.25
+      none_value:
+        status: null
+    not_equal:
+      boolean:
+        status:
+          $ne: true
+      integer:
+        age:
+          $ne: 25
+      float:
+        length:
+          $ne: 25.5678
+      string:
+        name:
+          $ne: John
+      string_with_escaping:
+        name:
+          $ne: "O'Reilly"
+      datetime:
+        created_at:
+          $ne: !!timestamp 2000-01-02 03:04:05
+      datetime_with_timezone:
+        created_at:
+          $ne: !!timestamp 2000-01-02 13:04:05.678901+00:00
+      decimal:
+        price:
+          $ne: !decimal 25.25
+      none_value:
+        status:
+          $ne: null
+    greater_than:
+      integer:
+        age:
+          $gt: 25
+      float:
+        length:
+          $gt: 25.5678
+      datetime:
+        created_at:
+          $gt: !!timestamp 2000-01-02 03:04:05
+      datetime_with_timezone:
+        created_at:
+          $gt: !!timestamp 2000-01-02 13:04:05.678901+00:00
+      decimal:
+        price:
+          $gt: !decimal 25.25
+    greater_than_or_equal:
+      integer:
+        age:
+          $gte: 25
+      float:
+        length:
+          $gte: 25.5678
+      datetime:
+        created_at:
+          $gte: !!timestamp 2000-01-02 03:04:05
+      datetime_with_timezone:
+        created_at:
+          $gte: !!timestamp 2000-01-02 13:04:05.678901+00:00
+      decimal:
+        price:
+          $gte: !decimal 25.25
+    less_than:
+      integer:
+        age:
+          $lt: 200
+      float:
+        length:
+          $lt: 25.5678
+      datetime:
+        created_at:
+          $lt: !!timestamp 2000-01-02 03:04:05
+      datetime_with_timezone:
+        created_at:
+          $lt: !!timestamp 2000-01-02 13:04:05.678901+00:00
+      decimal:
+        price:
+          $lt: !decimal 25.25
+    less_than_or_equal:
+      integer:
+        age:
+          $lte: 100
+      float:
+        length:
+          $lte: 25.5678
+      datetime:
+        created_at:
+          $lte: !!timestamp 2000-01-02 03:04:05
+      datetime_with_timezone:
+        created_at:
+          $lte: !!timestamp 2000-01-02 13:04:05.678901+00:00
+      decimal:
+        price:
+          $lte: !decimal 25.25
+    like:
+      product_name:
+        $regex: "Banana%"
+    not_like:
+      sku:
+        $not:
+          $regex: "OLD-%"
+  logical:
+    operator:
+      and:
+        $and:
+          - age:
+              $gt: 25
+          - status: OK
+      or:
+        $or:
+          - age:
+              $gt: 25
+          - status: OK
+      precedence:
+        $or:
+          - a: 1
+          - $and:
+              - b: 2
+              - c: 3
+    inversion:
+      and:
+        $or:
+          - age:
+              $lte: 18
+          - status:
+              $ne: active
+      or:
+        $and:
+          - score:
+              $gte: 0
+          - score:
+              $lte: 100
+      "true": false
+      not_true: true
+      "false": true
+      not_false: false
+      like:
+        product_name:
+          $not:
+            $regex: "Banana%"
+      not_like:
+        sku: 
+          $regex: "OLD-%"
+      in:
+        age: 
+          $not_in: [25, 26, 28]
+      not_in:
+        age: 
+          $in: [25, 26, 28]
+      equal:
+        age:
+          $ne: 25
+      not_equal:
+        age: 25
+      greater_than:
+        age: 
+          $lte: 25
+      greater_than_or_equal:
+        age:
+          $lt: 25
+      less_than:
+        age:
+          $gte: 25
+      less_than_or_equal:
+        age:
+          $gt: 25
+    constant_folding:
+      true_and_true: true
+      true_or_true: true
+      false_and_false: false
+      false_or_false: false
+      x_and_true:
+        age:
+          $gt: 18
+      x_and_false: false
+      true_and_x:
+        status: active
+      false_and_x: false
+      x_or_true: true
+      x_or_false:
+        age:
+          $gt: 18
+      complex_nested:
+        a: 1
+      with_de_morgan: true
+      or_true_left: true
+      and_true_left:
+        status: active
+      or_false_left:
+        status: active
+      or_true_right: true
+  in:
+    integer:
+      age:
+        $in: [25, 26, 28]
+    float:
+      score:
+        $in: [25.5, 26.67, 28.893]
+    string:
+      name:
+        $in: ["lorem", "ipsum"]
+    datetime:
+      start_time:
+        $in:
+          - !!timestamp 2000-01-02 03:04:05
+          - !!timestamp 2000-12-23 22:45:55
+    decimal:
+      price:
+        $in:
+          - !decimal 25.25
+          - !decimal 26.67
+  not_in:
+    integer:
+      age:
+        $not_in: [25, 26, 28]
+    float:
+      score:
+        $not_in: [25.5, 26.67, 28.893]
+    string:
+      name:
+        $not_in:
+          - lorem
+          - ipsum
+    datetime:
+      start_time:
+        $not_in:
+          - !!timestamp 2000-01-02 03:04:05
+          - !!timestamp 2000-12-23 22:45:55
+    decimal:
+      price:
+        $not_in:
+          - !decimal 25.25
+          - !decimal 26.67
+  null_handling:
+    is_null:
+      status: null
+    is_not_null:
+      status:
+        $ne: null
