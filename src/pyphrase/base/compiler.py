@@ -2,8 +2,10 @@
 Basic compiler
 """
 
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
-from typing import TYPE_CHECKING, TypeVar
+from typing import TYPE_CHECKING, Generic, TypeVar
 
 from pyphrase.base.ast.optimizer import ASTOptimizer
 from pyphrase.base.ast.rules import (
@@ -23,10 +25,13 @@ if TYPE_CHECKING:
     from pyphrase.base.renderer import Renderer
 
 
+__all__ = ("BaseCompiler",)
+
+
 T = TypeVar("T")
 
 
-class BaseCompiler[T](ABC):
+class BaseCompiler(ABC, Generic[T]):
     """
     A generic base class for compilers that use AST optimization and custom rendering.
 

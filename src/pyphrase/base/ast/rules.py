@@ -18,6 +18,8 @@ Classes:
     - `NullOptimizationRule`: Optimizes nodes with null checks.
 """
 
+from __future__ import annotations
+
 from types import MappingProxyType
 from typing import TYPE_CHECKING, ClassVar, Protocol, cast
 

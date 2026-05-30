@@ -21,6 +21,8 @@ from pyphrase.dialect.sql.common import (
     SQLRenderer,
 )
 
+__all__ = ("C", "F")
+
 
 class QgisCompiler(SQLCompiler):
     __slots__ = ()

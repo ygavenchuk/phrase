@@ -13,6 +13,8 @@ Specifics:
       native `TRUE`/`FALSE` boolean constants.
 """
 
+from __future__ import annotations
+
 from types import MappingProxyType
 from typing import TYPE_CHECKING, ClassVar
 
@@ -28,6 +30,9 @@ from pyphrase.dialect.sql.common import (
 
 if TYPE_CHECKING:
     from collections.abc import Mapping
+
+
+__all__ = ("C", "F")
 
 
 class PostgresRenderer(SQLRenderer):

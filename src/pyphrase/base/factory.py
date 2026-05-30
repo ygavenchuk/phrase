@@ -1,4 +1,6 @@
-from typing import TYPE_CHECKING, TypeVar
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, Generic, TypeVar
 
 from pyphrase.base.ast.node import BinaryConstraint, ConstantNode, UnaryConstraint
 from pyphrase.base.expression import Expression
@@ -14,7 +16,7 @@ __all__ = ("BaseField", "ConstantFactory")
 T = TypeVar("T")
 
 
-class BaseField[T]:
+class BaseField(Generic[T]):
     __slots__ = ("_field",)
     _compiler_class: type[BaseCompiler[T]]
 
@@ -81,7 +83,7 @@ class BaseField[T]:
     less_than_or_equal = le = __le__
 
 
-class ConstantFactory[T]:
+class ConstantFactory(Generic[T]):
     __slots__ = ("_compiler_class",)
 
     def __init__(self, compiler_class: type[BaseCompiler[T]]) -> None:

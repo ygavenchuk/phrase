@@ -12,8 +12,10 @@ Specifics:
       notation for logical operators like `$and` and `$or`.
 """
 
+from __future__ import annotations
+
 from types import MappingProxyType
-from typing import TYPE_CHECKING, Any, ClassVar
+from typing import TYPE_CHECKING, Any, ClassVar, TypeAlias
 
 from pyphrase.base.ast.node import (
     BinaryConstraint,
@@ -40,7 +42,10 @@ if TYPE_CHECKING:
     from pyphrase.base.expression import Expression
 
 
-type TMongoRendered = dict[str, Any] | LiteralValue
+__all__ = ("C", "F")
+
+
+TMongoRendered: TypeAlias = dict[str, Any] | LiteralValue
 
 
 class MongoRenderer(Renderer[LiteralValue]):
