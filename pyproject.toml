@@ -37,6 +37,8 @@ dev = [
     "coverage>=7.6.0",
     "pip-audit>=2.8.0",
     "mypy>=2.0.0",
+    "pyyaml>=6.0.3",
+    "types-pyyaml>=6.0.12.20260518",
 ]
 
 [tool.hatch.build.targets.sdist]
@@ -140,5 +142,9 @@ directory = ".reports/htmlcov"
 
 [tool.pytest.ini_options]
 addopts = "--strict-markers --strict-config"
+markers = [
+    "spec: Специфікація логіки та типу виразу для пошуку в YAML"
+
+]
 pythonpath = ["src"]
 testpaths = ["tests"]
